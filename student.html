@@ -1,0 +1,268 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>WELCOME TO ADMIN</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+  body{
+      background-image: url("http://127.0.0.1:5000/static/cc.jpg");
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+    }
+  /*--------------------------------------------------------------
+  # Sections General
+  --------------------------------------------------------------*/
+  section {
+    margin-top: 1vh;
+    /* padding: 10px 0; */
+    overflow: hidden;
+    height: 85vh; 
+    box-shadow: 0px 0 5px rgb(13, 13, 13);
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .portfolio-details {
+    margin-top: 10px;
+  }
+
+  .portfolio-details .portfolio-info {
+    padding: 10px 30px;
+    /* height: 82vh; */
+  }
+
+  .portfolio-details .portfolio-info h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(255, 0, 0);
+    text-align: center;
+  }
+
+  .ul{
+    background-color: black;
+  }
+  .validate{
+    background-color: blue;
+    color: black;
+  }
+
+  .container-fluid{
+    background-color: black;
+  }
+
+  .navbar-brand{
+    color: blue;
+  }
+ 
+  .navbar-header{
+    color: blue;
+  }
+
+  .nav .navbar-nav .navbar-right{
+    background-color: blue;
+    color: blue;
+  }
+
+  .input-field{
+    background-color: blue;
+  }
+
+
+
+  .nav {
+  background-color: #000000;
+
+}
+
+.navbar-nav {
+  list-style-type: none;
+  margin: 100;
+  padding: 1000;
+  text-align: right;
+}
+
+.navbar-nav li {
+ 
+  margin-left: 10px;
+  color: #000000;
+  padding: 1000;
+  margin-left: 100;
+  background-color: #000000;
+}
+
+
+  </style>
+
+
+
+
+<script>
+  function validate()
+  {
+  alert("Admin Logout Succesfull.");
+        window.location.replace("/home");
+  }
+  
+</script>
+</head>
+
+<body>
+  {% block content %}
+ 
+  <nav class="navbar navbar-inverse bg-dark">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">STUDENT ATTENDANCE SYSTEM</a>
+  </div>
+  
+  <BR>
+
+  <nav class="nav">
+    <ul class="navbar-nav navbar-right">
+     <LI>
+      <div class="input-field">
+        <input type="submit" class="submit" value="ADMIN LOGOUT" onclick="validate()">
+      </div>
+     </LI>
+    </ul>
+  </nav>
+    </div>
+    
+  </nav>
+
+
+
+  
+  
+  <div class="container">
+    
+    <section id="portfolio" class="portfolio-details">
+      <div class="row">
+          <div class="col-lg-5">
+            <div class="portfolio-info">
+              <h3>CREATE STUDENT DETAILS</h3>
+              <form action="/create_datsets" method="POST" >
+                <div class="form-group">
+                  <!-- <label for="Id"></label> -->
+                  <input type="number" class="form-control" id="Id" name="Id" placeholder="Student Id">
+                </div>
+                <div class="form-group">
+                  <!-- <label for="Name">:</label> -->
+                  <input type="text" placeholder="Student Name" class="form-control" id="Name" name="Name">
+                </div>
+                <div class="form-group">
+                  <!-- <label for="Name">:</label> -->
+                  <input type="text" placeholder="Student USN" class="form-control" id="USN" name="USN">
+                </div>
+                <div class="form-group">
+                  <!-- <label for="Phone">:</label> -->
+                  <input type="tel" placeholder="Phone No." class="form-control" id="Phone" name="Phone">
+                </div>
+                <div class="form-group">
+                  <!-- <label for="Email">:</label> -->
+                  <input type="email" placeholder="Email Id" class="form-control" id="Email" name="Email">
+                </div>
+                <div class="form-group">
+                  <!-- <label for="pwd">Semester:</label> -->
+                    <select name="Sem" id="Sem" class="form-control">
+                        <option value="1st">1st semester</option>
+                        <option value="2nd">2nd semester</option>
+                        <option value="3rd">3rd semester</option>
+                        <option value="4th">4th semester</option>
+                        <option value="5th">5th semester</option>
+                        <option value="6th">6th semester</option>
+                        <option value="7th">7th semester</option>
+                        <option value="8th">8th semester</option>
+                       
+                    </select>
+                </div>
+                <div class="form-group">
+                  <!-- <label for="pwd">Branch:</label> -->
+                    <select name="Cource" id="Cource" class="form-control">
+                        <option value="MBA">MBA</option>
+                        <option value="be">B.E</option>
+                        <option value="mt">M.Tech</option>
+                        <option value="dip">Diploma</option>
+
+                    </select>
+                </div>
+                <div class="form-group">
+                  <!-- <label for="pwd">Branch:</label> -->
+                    <select name="Branch" id="Branch" class="form-control">
+                        <option value="AE">Aeronautical Engineering</option>
+                        <option value="As">Aerospace Engineering</option>
+                        
+                        <option value="bE">Biomedical Engineering</option>
+                        <option value="CS">Computer Science & Engineering</option>
+                        <option value="Ch">Chemical Engineering</option>
+                        <option value="CE">Civil Engineering</option>
+                        <option value="ME">Mechanical Engineering</option>
+                        <option value="EC">Electronics & Communication</option>
+                        <option value="EE">Electrical & Electronics Engineering</option>
+                        <option value="is">Information Science and Engineering </option>
+                        
+                    </select>
+                </div>
+                <div class="form-group">
+                  <!-- <label for="Id"></label> -->
+                  <input type="text" class="form-control" id="cardnum" name="cardnum" placeholder="Card number">
+                </div>
+                <button type="submit" class="btn btn-success form-control">SUBMIT</button>
+              </form>
+  
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+              <div class="row">
+                  <div class="col-lg-6">
+                    <div class="portfolio-info">
+                      <h3>FACE ID</h3>
+                      <a href="/training"><button class="btn btn-success form-control">SUBMIT</button></a>
+                      
+                    </div>
+                  </div>
+                </div>
+
+                
+                  <div class="row">
+                    <div class="col-lg-12">
+                    <div class="portfolio-info">
+                      <h3>UPDATES</h3>
+                      {% if msg %}
+                      {% for mg in msg %}
+                      <h4>{{mg}}</h4>
+                      {% endfor %}
+                      {% endif %}
+        
+                      {% if List %}
+                      <h4>Subject: {{ subject }}</h4>
+                      <h4>Date: {{ date }}</h4>
+                      <h4>Time: {{ time }}</h4>
+                      {% for i in List %}
+                      <h4>{{i}}</h4>
+                      {% endfor %}
+                      {% endif %}
+        
+                    </div>
+                  </div>
+                </div>
+              </div>
+             </div>
+    </section>
+  </div>
+{% endblock content %}
+</body>
+</html>

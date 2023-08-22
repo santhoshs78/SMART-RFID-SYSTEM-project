@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+   <title>WELCOME TO ATTENDANCE</title>
+   
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ 
+   <style>
+     body{
+      background-image: url("http://127.0.0.1:5000/static/cc.jpg");
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+    }
+   /*--------------------------------------------------------------
+   # Sections General
+   --------------------------------------------------------------*/
+   section {
+    margin-top: 1vh;
+    /* padding: 10px 0px; */
+    overflow: hidden;
+    height: 60vh;
+    box-shadow: 0px 0 5px rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .portfolio-details {
+    margin-top: 30px;
+  }
+
+  .portfolio-details .portfolio-info {
+    padding: 20px 50px;
+    /* height: 82vh; */
+  }
+
+  .portfolio-details .portfolio-info h3 {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(255, 0, 0);
+    text-align: center;
+  }
+
+
+   </style>
+</head>
+
+
+<body>
+  <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">STUDENT ATTENDANCE SYSTEM</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/home">HOME</a></li>
+              <li><a href="/login">ADMIN LOGIN</a></li>
+              <li><a href="/sattendance">ATTENDANCE</a></li>
+              <li><a href="/lab">LABORATORY</a></li>
+              <li><a href="/lib"> LIBRARY</a></li>
+              
+      
+            </ul>
+          </div>
+        </nav>
+      
+        <div class="container">
+          
+          <section id="portfolio" class="portfolio-details">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="portfolio-info">
+                  <h3>TAKE ATTENDANCE</h3>
+                  <form action="/attendence" method="POST" class="form-inline" >
+                    <!-- <label for="pwd">Semester:</label> -->
+                      <select name="Subject" id="Subject" class="form-control" style="width: 80%;">
+                       <option value="IOT">IOT</option>
+                        <option value="KANNADA">KANNADA</option>
+                        <option value="CSS">CSS</option>
+                        <option value="JAVA">JAVA</option>
+                          <option value="PYTHON">PYTHON</option>
+                          <option value="ELECTRONICS">ELECTRONICS</option>
+                          <option value="MATHEMATICS-1">MATHEMATICS-1</option>
+                          <option value="MATHEMATICS-2">MATHEMATICS-2</option>
+                          <option value="MATHEMATICS-3">MATHEMATICS-3</option>
+                          <option value="MATHEMATICS-4">MATHEMATICS-4</option>
+                          <option value="IMAGE PROCESSING">IMAGE PROCESSING</option>
+                          <option value="WEB PROGRAMMING">WEB PROGRAMMING</option>
+                          <option value="ARTIFICIAL INTELLIGENCE">ARTIFICIAL INTELLIGENCE</option>
+                          <option value="ETHICAL HACKING">ETHICAL HACKING</option>
+                          <option value="ENVIRONMENTAL SCIENCE">ENVIRONMENTAL SCIENCE</option>
+                          <option value="DATA STRUCTURES">DATA STRUCTURES</option>
+                          <option value="C PROGRAMMING">C PROGRAMMING</option>
+                          <option value="DEEP LEARNING">DEEP LEARNING</option>
+                          <option value="COMPUTER NETWORKS">COMPUTER NETWORKS</option>
+                          <option value="ANALOG AND DIGITAL ELECTRONICS">ANALOG AND DIGITAL ELECTRONICS</option>                         
+                          <option value="OCCUPATIONAL HEALTH AND SAFETY ADMINISTRATION">OCCUPATIONAL HEALTH AND SAFETY ADMINISTRATION</option>
+                         
+                      
+                          
+                      </select>
+                    &nbsp;&nbsp;
+                    <br>
+                    <br>
+                  <button type="submit" class="btn btn-success">SUBMIT</button>
+                  </form>
+                  </div>
+              </div>
+          
+                    
+
+                        <div class="row">
+                          <div class="col-lg-6">
+                          <div class="portfolio-info">
+                            <h3>UPDATES</h3>
+                            {% if msg %}
+                            {% for mg in msg %}
+                            <h4>{{mg}}</h4>
+                            {% endfor %}
+                            {% endif %}
+              
+                            {% if List %}
+                            <h4>Subject: {{ subject }}</h4>
+                            <h4>Date: {{ date }}</h4>
+                            <h4>Time: {{ time }}</h4>
+                           
+                            {% for i in List %}
+                            <h4>{{i}}</h4>
+                            {% endfor %}
+                            {% endif %}
+              
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                   </div>
+          </section>
+        </div>
+</body>
+
+</html>

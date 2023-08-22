@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Create Admin </title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
+*{
+    font-family: 'poppins' ,sans-serif;
+}
+body{
+    background: linear-gradient(rgb(221, 0, 255),rgba(244, 8, 122, 0.989));
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+}
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background: linear-gradient(rgb(210, 49, 49),rgba(217, 20, 214, 0.989));
+  border-radius: 10px;
+  box-shadow: -1px 6px 20px rgb(10, 2, 255);
+}
+.container{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px 0 15px;
+    
+}
+
+header{
+    color: #ffffff;
+    font-size: 25px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 10px 0;
+}
+
+.input-field .input{
+    height: 45px;
+    width: 87%;
+    border: none;
+    border-radius: 30px;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 0 0 0 45px;
+    background: rgb(0, 0, 0);
+    outline: none;
+    transition: 2.5s ;
+   
+ 
+
+}
+
+
+i{
+    position: relative;
+    top: -33px;
+    left: 17px;
+    color: #00ff11;
+}
+::-webkit-input-placeholder{
+    color: #ffffff;
+}
+.submit{
+    border-radius:60px;
+    padding: 3px 5px;
+    border: none;
+    font-size: 15px;
+    height: 45px;
+    outline: none;
+    margin-left: 70px;
+    width: 60%;
+    color: rgb(251, 251, 251);
+    background: rgb(0, 0, 0);
+    cursor: pointer;
+    transition: .3s ;
+}
+.submit:hover{
+    box-shadow: 1px 5px 7px 1px rgb(4, 0, 255);
+}
+.col{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #000000;
+    
+    font-size:large;
+    margin-top: 10px;
+}
+
+label a{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #000000;
+    text-decoration: none;
+}
+
+
+    </style>
+<script>
+    function validate(){
+    var password = document.getElementById("pass");
+    var length = document.getElementById("length");
+ 
+    
+
+    if(password.value.length >= 4){
+        alert("Data Saved Succesfull.");
+        window.location.replace("/home");
+        return false;
+    }
+    else{
+        alert("password incorrect");
+        
+    }
+}
+</script>
+</head>
+<body>
+   
+   <div class="box">
+    <div class="container">
+
+        <div class="top">
+            
+            <header>CREATE ADMIN ACCOUNT</header>
+            <BR>
+        </div>
+        <div class="input-field">
+            <input type="text" class="input" placeholder="Username" id="Username">
+            <i class='bx bx-user' ></i>
+            
+        </div>
+        <div class="input-field">
+            <input type="password" class="input" placeholder="Password" id="pass">
+            <i class='bx bx-lock-alt' ></i>
+            
+        </div>
+
+        <div class="input-field">
+            <input type="Password" class="input" placeholder="Re-enter Password" id="pass">
+            <i class='bx bx-lock-alt'></i>
+        </div>
+<BR>
+        <div class="input-field">
+            <input type="submit" class="submit" value="SUBMIT" onclick="validate()">
+            
+            <br>
+            <br>
+            <a href="/home"><input type="submit" class="submit" value="HOME" id=""></a>
+        </div>
+
+        <div class="col">
+            
+                          <label><a href="/login">Sign in</a></label>
+            
+        </div>
+    </div>
+</div>  
+
+</body>
+</html>
